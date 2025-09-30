@@ -1,31 +1,35 @@
 {
-  "name": "nursing-student-evaluation-system",
-  "version": "1.0.0",
+  "name": "nursing-evaluation-system",
+  "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
+    "@jridgewell/sourcemap-codec": "^1.5.5",
     "@tanstack/react-query": "^5.90.2",
-    "@types/node": "^18.15.0",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "autoprefixer": "^10.4.14",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.68",
+    "@types/react": "^18.2.42",
+    "@types/react-dom": "^18.2.17",
+    "clsx": "^2.0.0",
     "framer-motion": "^12.23.22",
-    "lucide-react": "^0.263.1",
-    "postcss": "^8.4.24",
+    "lucide-react": "^0.294.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^7.9.3",
+    "react-router-dom": "^6.20.1",
     "react-scripts": "5.0.1",
-    "recharts": "^2.15.4",
-    "socket.io-client": "^4.8.1",
-    "tailwindcss": "^3.3.0",
+    "recharts": "^2.8.0",
+    "tailwind-merge": "^2.0.0",
     "typescript": "^4.9.5",
-    "zustand": "^5.0.8"
+    "web-vitals": "^2.1.4",
+    "zustand": "^4.4.7"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -44,5 +48,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6"
   }
 }
