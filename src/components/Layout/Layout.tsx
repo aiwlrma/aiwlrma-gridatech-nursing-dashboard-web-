@@ -10,7 +10,7 @@ import useStore from '../../store/useStore';
 const Layout: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
-  const { currentUser, alerts, unreadAlertCount } = useStore();
+  const { currentUser, unreadAlertCount } = useStore();
 
   const menuItems = [
     { path: '/dashboard', icon: LayoutDashboard, label: '대시보드', group: '학습관리' },
@@ -100,9 +100,9 @@ const Layout: React.FC = () => {
                   <h1 className="text-xl font-bold text-purple-600">SchoolHub</h1>
                 </div>
                 <nav className="flex flex-1 flex-col">
-                  <ul role="list" className="flex flex-1 flex-col gap-y-7">
+                  <ul className="flex flex-1 flex-col gap-y-7">
                     <li>
-                      <ul role="list" className="-mx-2 space-y-1">
+                      <ul className="-mx-2 space-y-1">
                         {menuItems.map((item) => {
                           const Icon = item.icon;
                           return (

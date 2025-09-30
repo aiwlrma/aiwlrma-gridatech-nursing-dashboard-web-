@@ -1,6 +1,6 @@
 import React from 'react';
 import { Student, StudentListFilters } from '../../types/student';
-import { Eye, MessageSquare, Sparkles, ChevronDown } from 'lucide-react';
+import { Eye, MessageSquare, Sparkles } from 'lucide-react';
 
 interface StudentListTableProps {
   students: Student[];

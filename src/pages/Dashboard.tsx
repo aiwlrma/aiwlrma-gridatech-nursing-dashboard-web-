@@ -12,16 +12,12 @@ import {
   Bell,
   Settings,
   BarChart3,
-  Target,
-  AlertTriangle,
-  CheckCircle,
-  Star,
   ArrowRight,
   Download,
   Filter,
   Search
 } from 'lucide-react';
-import EnhancedKPICard from '../components/Dashboard/EnhancedKPICard';
+// import EnhancedKPICard from '../components/Dashboard/EnhancedKPICard';
 import AchievementDistribution from '../components/Dashboard/AchievementDistribution';
 import StudentGrowthChart from '../components/Dashboard/StudentGrowthChart';
 import RetrainingRecommendations from '../components/Dashboard/RetrainingRecommendations';
