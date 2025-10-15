@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/aiwlrma-gridatech-nursing-dashboard-web-/static/css/main.655860f1.css",
-    "main.js": "/aiwlrma-gridatech-nursing-dashboard-web-/static/js/main.39b80dc7.js",
-    "index.html": "/aiwlrma-gridatech-nursing-dashboard-web-/index.html",
-    "main.655860f1.css.map": "/aiwlrma-gridatech-nursing-dashboard-web-/static/css/main.655860f1.css.map",
-    "main.39b80dc7.js.map": "/aiwlrma-gridatech-nursing-dashboard-web-/static/js/main.39b80dc7.js.map"
+    "main.css": "./static/css/main.655860f1.css",
+    "main.js": "./static/js/main.39b80dc7.js",
+    "index.html": "./index.html",
+    "main.655860f1.css.map": "./static/css/main.655860f1.css.map",
+    "main.39b80dc7.js.map": "./static/js/main.39b80dc7.js.map"
   },
   "entrypoints": [
     "static/css/main.655860f1.css",
