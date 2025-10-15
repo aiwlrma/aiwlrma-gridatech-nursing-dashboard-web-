@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/gridatech-nursing-dashboard-web/static/css/main.6c965e2e.css",
-    "main.js": "/gridatech-nursing-dashboard-web/static/js/main.8e47382f.js",
-    "index.html": "/gridatech-nursing-dashboard-web/index.html",
-    "main.6c965e2e.css.map": "/gridatech-nursing-dashboard-web/static/css/main.6c965e2e.css.map",
-    "main.8e47382f.js.map": "/gridatech-nursing-dashboard-web/static/js/main.8e47382f.js.map"
+    "main.css": "/aiwlrma-gridatech-nursing-dashboard-web-/static/css/main.655860f1.css",
+    "main.js": "/aiwlrma-gridatech-nursing-dashboard-web-/static/js/main.39b80dc7.js",
+    "index.html": "/aiwlrma-gridatech-nursing-dashboard-web-/index.html",
+    "main.655860f1.css.map": "/aiwlrma-gridatech-nursing-dashboard-web-/static/css/main.655860f1.css.map",
+    "main.39b80dc7.js.map": "/aiwlrma-gridatech-nursing-dashboard-web-/static/js/main.39b80dc7.js.map"
   },
   "entrypoints": [
-    "static/css/main.6c965e2e.css",
-    "static/js/main.8e47382f.js"
+    "static/css/main.655860f1.css",
+    "static/js/main.39b80dc7.js"
   ]
 }
