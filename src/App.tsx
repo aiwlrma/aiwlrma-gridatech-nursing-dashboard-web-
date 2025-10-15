@@ -11,6 +11,7 @@ import Reports from './pages/Reports';
 import Messages from './pages/Messages';
 import Settings from './pages/Settings';
 import StudentDetail from './pages/StudentDetail';
+import ReeducationDemo from './pages/ReeducationDemo';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -37,6 +38,7 @@ function App() {
             <Route path="reports" element={<Reports />} />
             <Route path="messages" element={<Messages />} />
             <Route path="settings" element={<Settings />} />
+            <Route path="reeducation-demo" element={<ReeducationDemo />} />
           </Route>
         </Routes>
       </BrowserRouter>

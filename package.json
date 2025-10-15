@@ -1,8 +1,8 @@
 {
-  "name": "nursing-evaluation-system",
+  "name": "nursing-evaluation-system-v2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://aiwlrma.github.io/aiwlrma-gridatech-nursing-dashboard-web-",
+  "homepage": ".",
   "dependencies": {
     "@jridgewell/sourcemap-codec": "^1.5.5",
     "@tanstack/react-query": "^5.90.2",

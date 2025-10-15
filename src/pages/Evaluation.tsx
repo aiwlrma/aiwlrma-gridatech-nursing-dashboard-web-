@@ -74,6 +74,71 @@ const Evaluation: React.FC = () => {
       passRate: 0,
       deadline: '2025-04-05',
       status: 'not-started'
+    },
+    {
+      id: '4',
+      title: '기말고사 - 성인간호학',
+      type: 'knowledge',
+      category: '필기시험',
+      totalStudents: 45,
+      submittedCount: 42,
+      gradedCount: 40,
+      averageScore: 78.5,
+      passRate: 85,
+      deadline: '2025-04-20',
+      status: 'in-progress'
+    },
+    {
+      id: '5',
+      title: 'IV 삽입 술기 평가',
+      type: 'skill',
+      category: '실습 평가',
+      totalStudents: 45,
+      submittedCount: 35,
+      gradedCount: 28,
+      averageScore: 88.7,
+      passRate: 90,
+      deadline: '2025-03-25',
+      status: 'in-progress'
+    },
+    {
+      id: '6',
+      title: '무균술 실습 평가',
+      type: 'skill',
+      category: '실습 평가',
+      totalStudents: 45,
+      submittedCount: 40,
+      gradedCount: 40,
+      averageScore: 85.2,
+      passRate: 88,
+      deadline: '2025-03-18',
+      status: 'completed'
+    },
+    {
+      id: '7',
+      title: '간호윤리 태도 평가',
+      type: 'attitude',
+      category: '관찰 평가',
+      totalStudents: 45,
+      submittedCount: 0,
+      gradedCount: 0,
+      averageScore: 0,
+      passRate: 0,
+      deadline: '2025-04-10',
+      status: 'not-started'
+    },
+    {
+      id: '8',
+      title: '기본간호학 실습',
+      type: 'skill',
+      category: '실습 평가',
+      totalStudents: 45,
+      submittedCount: 30,
+      gradedCount: 25,
+      averageScore: 92.1,
+      passRate: 95,
+      deadline: '2025-03-30',
+      status: 'in-progress'
     }
   ];
 
@@ -206,10 +271,10 @@ const Evaluation: React.FC = () => {
               {/* Tab Navigation */}
               <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
                 {[
-                  { id: 'all', label: '전체', count: 25 },
-                  { id: 'knowledge', label: '지식 평가', count: 8 },
-                  { id: 'attitude', label: '태도 평가', count: 5 },
-                  { id: 'skill', label: '기술 평가', count: 12 }
+                  { id: 'all', label: '전체', count: evaluationItems.length },
+                  { id: 'knowledge', label: '지식 평가', count: evaluationItems.filter(item => item.type === 'knowledge').length },
+                  { id: 'attitude', label: '태도 평가', count: evaluationItems.filter(item => item.type === 'attitude').length },
+                  { id: 'skill', label: '기술 평가', count: evaluationItems.filter(item => item.type === 'skill').length }
                 ].map((tab) => (
                   <button
                     key={tab.id}
@@ -227,11 +292,11 @@ const Evaluation: React.FC = () => {
             </div>
 
             {/* Table */}
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className="bg-gray-50 border-b border-gray-200">
+            <div className="overflow-x-auto max-h-[600px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+              <table className="w-full min-w-[1200px]">
+                <thead className="bg-gray-50 border-b border-gray-200 sticky top-0 z-10">
                   <tr>
-                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider w-12">
                       <input
                         type="checkbox"
                         checked={selectedItems.length === filteredItems.length && filteredItems.length > 0}
@@ -239,28 +304,28 @@ const Evaluation: React.FC = () => {
                         className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                       />
                     </th>
-                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider min-w-[300px]">
                       평가 항목
                     </th>
-                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider min-w-[100px]">
                       유형
                     </th>
-                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider min-w-[120px]">
                       제출/평가
                     </th>
-                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider min-w-[100px]">
                       평균 점수
                     </th>
-                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider min-w-[100px]">
                       합격률
                     </th>
-                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider min-w-[120px]">
                       마감일
                     </th>
-                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    <th className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider min-w-[100px]">
                       상태
                     </th>
-                    <th className="px-4 py-3 text-right text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    <th className="px-4 py-3 text-right text-xs font-semibold text-gray-700 uppercase tracking-wider min-w-[200px]">
                       작업
                     </th>
                   </tr>
@@ -273,7 +338,7 @@ const Evaluation: React.FC = () => {
                     
                     return (
                       <tr key={item.id} className="hover:bg-gray-50 transition-colors">
-                        <td className="px-4 py-3">
+                        <td className="px-4 py-3 w-12">
                           <input
                             type="checkbox"
                             checked={selectedItems.includes(item.id)}
@@ -281,69 +346,69 @@ const Evaluation: React.FC = () => {
                             className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                           />
                         </td>
-                        <td className="px-4 py-3">
+                        <td className="px-4 py-3 min-w-[300px]">
                           <div>
-                            <p className="text-sm font-medium text-gray-900">{item.title}</p>
-                            <p className="text-xs text-gray-500">
+                            <p className="text-sm font-medium text-gray-900 whitespace-nowrap">{item.title}</p>
+                            <p className="text-xs text-gray-500 whitespace-nowrap">
                               {typeBadge.label} · {item.category}
                             </p>
                           </div>
                         </td>
-                        <td className="px-4 py-3">
-                          <span className={`px-2 py-1 text-xs font-medium rounded-full ${typeBadge.className}`}>
+                        <td className="px-4 py-3 min-w-[100px]">
+                          <span className={`px-2 py-1 text-xs font-medium rounded-full ${typeBadge.className} whitespace-nowrap`}>
                             {typeBadge.label}
                           </span>
                         </td>
-                        <td className="px-4 py-3 text-sm text-gray-900">
+                        <td className="px-4 py-3 text-sm text-gray-900 min-w-[120px] whitespace-nowrap">
                           {pendingCount > 0 ? (
                             <span className="text-orange-600 font-medium">{pendingCount}</span>
                           ) : (
                             <span className="text-gray-600">{item.gradedCount}</span>
                           )} / {item.totalStudents}
                         </td>
-                        <td className="px-4 py-3 text-sm font-medium text-gray-900">
+                        <td className="px-4 py-3 text-sm font-medium text-gray-900 min-w-[100px] whitespace-nowrap">
                           {item.averageScore > 0 ? item.averageScore.toFixed(1) : '-'}
                         </td>
-                        <td className="px-4 py-3">
+                        <td className="px-4 py-3 min-w-[100px]">
                           {item.passRate > 0 ? (
                             <div className="flex items-center gap-2">
-                              <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+                              <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden min-w-[40px]">
                                 <div 
                                   className="h-full bg-green-500" 
                                   style={{ width: `${item.passRate}%` }}
                                 />
                               </div>
-                              <span className="text-sm text-gray-700">{item.passRate}%</span>
+                              <span className="text-sm text-gray-700 whitespace-nowrap">{item.passRate}%</span>
                             </div>
                           ) : (
                             <span className="text-sm text-gray-400">-</span>
                           )}
                         </td>
-                        <td className="px-4 py-3 text-sm text-gray-600">
+                        <td className="px-4 py-3 text-sm text-gray-600 min-w-[120px] whitespace-nowrap">
                           {item.deadline}
                         </td>
-                        <td className="px-4 py-3">
-                          <span className={`px-2 py-1 text-xs font-medium rounded-full ${statusBadge.className}`}>
+                        <td className="px-4 py-3 min-w-[100px]">
+                          <span className={`px-2 py-1 text-xs font-medium rounded-full ${statusBadge.className} whitespace-nowrap`}>
                             {statusBadge.label}
                           </span>
                         </td>
-                        <td className="px-4 py-3 text-right">
-                          <div className="flex items-center justify-end gap-2">
-                            <button className="p-1.5 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded">
+                        <td className="px-4 py-3 text-right min-w-[200px]">
+                          <div className="flex items-center justify-end gap-2 flex-wrap">
+                            <button className="p-1.5 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded whitespace-nowrap">
                               <Eye size={16} />
                             </button>
-                            <button className="p-1.5 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded">
+                            <button className="p-1.5 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded whitespace-nowrap">
                               <Edit2 size={16} />
                             </button>
                             {item.status === 'in-progress' && pendingCount > 0 && (
                               <button 
                                 onClick={() => setShowGradingModal(true)}
-                                className="px-3 py-1.5 text-sm text-white bg-blue-600 hover:bg-blue-700 rounded"
+                                className="px-3 py-1.5 text-sm text-white bg-blue-600 hover:bg-blue-700 rounded whitespace-nowrap"
                               >
                                 채점하기
                               </button>
                             )}
-                            <button className="p-1.5 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded">
+                            <button className="p-1.5 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded whitespace-nowrap">
                               <MoreVertical size={16} />
                             </button>
                           </div>

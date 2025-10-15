@@ -8,7 +8,8 @@ import {
   AlertTriangle, 
   TrendingUp, 
   Settings,
-  Bot
+  Bot,
+  GraduationCap
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -23,6 +24,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, onPageChange }) => {
     { id: 'submissions', label: '제출/실습기록', icon: FolderOpen },
     { id: 'grades', label: '성적/컴피턴시', icon: Calculator },
     { id: 'ai-evaluation', label: 'AI 평가 도우미', icon: Bot },
+    { id: 'reeducation-demo', label: '재교육 권장', icon: GraduationCap },
     { id: 'results', label: '결과 발표', icon: Megaphone },
     { id: 'appeals', label: '이의/재평가', icon: AlertTriangle },
     { id: 'reports', label: '보고서', icon: TrendingUp },

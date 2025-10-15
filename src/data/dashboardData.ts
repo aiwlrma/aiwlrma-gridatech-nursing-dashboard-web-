@@ -37,7 +37,7 @@ export const dashboardData: DashboardData = {
   
   retrainingNeeds: [
     { skill: '무균술', errorRate: 30, affectedStudents: 12, priority: 'high' },
-    { skill: 'IV 삽입', errorRate: 25, affectedStudents: 8, priority: 'medium' },
-    { skill: '손위생', errorRate: 20, affectedStudents: 5, priority: 'medium' }
+    { skill: 'IV 삽입', errorRate: 25, affectedStudents: 8, priority: 'high' },
+    { skill: '손위생', errorRate: 20, affectedStudents: 5, priority: 'high' }
   ]
 };
