@@ -1,13 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm ci && CI=false npm run build",
+  "buildCommand": "CI=false npm run build",
   "outputDirectory": "build",
-  "framework": "create-react-app",
-  "installCommand": "npm ci",
-  "devCommand": "npm start",
-  "functions": {
-    "app/api/**/*.js": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  "framework": "create-react-app"
 }
